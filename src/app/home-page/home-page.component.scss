@@ -1,0 +1,36 @@
+.card-container {
+  display: grid;
+  padding: 10px 12px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);;
+  margin-bottom: 23px;
+  background: white;
+  height: 100%;
+}
+
+.card-content {
+  padding: 0px 0px 10px 10px;
+  display: flex;
+  align-items: center;
+
+  &__title {
+    padding-left: 20px;
+    font-size: 18px;
+    display: inline-block;
+    line-height: 26px;
+    font-family: 'Raleway', sans-serif !important;
+    margin-bottom: 0;
+  }
+
+  &__img {
+    width: 80px;
+    height: 72px;
+    float: left;
+    display: inline-flex;
+  }
+}
+
+.widget {
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px #888888;
+}

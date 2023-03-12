@@ -1,0 +1,55 @@
+.content {
+  flex: 1;  
+  flex-direction: column;  
+}
+
+.response {
+  &-user {
+    max-width: 80%;
+    float: right;
+    border: 1px solid #eee;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: black;
+    background-color: white;
+  }
+
+  &-gpt {
+    max-width: 80%;
+    float: left;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: white;
+    background-color: black;
+  }
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.submit-icon {
+  margin-top: 13px;
+}
+
+.submit-icon-content {
+  margin-top: 13px;
+  color: green;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}

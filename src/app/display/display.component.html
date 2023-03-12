@@ -1,0 +1,33 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-10">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Type a message..." [(ngModel)]="question" />
+            </mat-form-field>
+        </div>
+        <div class="col-2">
+            <div class="d-flex justify-content-center submit-btn">
+                <button mat-fab color="warn">
+                    <mat-icon>send</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1 row">
+        <div *ngFor="let dt of data">
+            <div *ngIf="dt.name==='gpt'" class="response">
+                <div class="response-gpt mb-3 p-3">{{ dt.content }}</div>
+                <br>
+            </div>
+            <div *ngIf="dt.name==='user'" class="response">
+                <div class="response-user mb-3 p-3">{{ dt.content }}</div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="dellE" class="row mb-5 pb-5">
+        <div *ngFor="let dt of data" class="col-6 mb-4">
+            <img src="{{dt.url}}" class="res-image col-11 p-3">
+        </div>
+    </div>
+</div>
