@@ -1,0 +1,115 @@
+$color-apple:#4CB341;
+$color-bondiblue:#0990B1;
+$color-atoll:#0B6C8A;
+$color-red:#E10000;
+$color-balticsea:#2E2D34;
+$color-brightgray:#3D3F4F;
+$color-saltbox:#6D6A73;
+$color-manatee:#8E90A3;
+$color-spindle:#B1C4E4;
+$color-easternblue:#169696;
+$color-burnt:#EE6464;
+$color-guardsmanred:#C00404;
+$color-tuna:#32303A;
+$color-tunalight:#37363F;
+$color-iceberg:#DFF2F4;
+$color-athensgray:#F1F1F3;
+$color-linkwater:#D6E0F1;
+$color-white:#ffffff;
+$color-snow:#F9F9F9;
+
+
+$color-primary:$color-bondiblue;
+$color-primary-active:$color-atoll;
+$color-accent:$color-brightgray;
+$color-accent-active:$color-tuna;
+$color-success:$color-apple;
+$color-secondary:$color-easternblue;
+$color-danger:$color-red;
+$color-danger-active:$color-guardsmanred;
+$color-negative:$color-burnt;
+$color-background:$color-tunalight;
+$color-background-active:$color-balticsea;
+$color-incative:$color-saltbox;
+$color-muted:$color-manatee;
+$color-border:$color-spindle;
+$color-line:$color-athensgray;
+$color-highlight:$color-iceberg;
+$color-invert-text:$color-linkwater;
+$color-invert-text-active:$color-white;
+$color-background-body:$color-snow;
+
+$success-color: #4CB341;
+$info-color: #169696;
+$warning-color: #ff8c00;
+$danger-color: #E10000;
+$negative-color: #C00404;
+
+$main-color: (
+  50 : #F9F9F9,
+  100 : #F1F1F3,
+  200 : #D6E0F1,
+  300 : #B1C4E4,
+  400 : #8E90A3,
+  500 : #6D6A73,
+  600 : #3D3F4F,
+  700 : #37363F,
+  800 : #32303A,
+  900 : #2E2D34,
+  A100 : #DFF2F4,
+  A200 : #0990B1,
+  A400 : #0990B1,
+  A700 : #0B6C8A,
+  contrast: (
+    50 : #3D3F4F,
+    100 : #3D3F4F,
+    200 : #3D3F4F,
+    300 : #3D3F4F,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+@function main-color($key: $main-color) {
+  @return map-get($main-color, $key);
+}
+$accent-palette: (
+  50 : #ecf5fb,
+  100 : #cee6f6,
+  200 : #aed6f0,
+  300 : #8ec6e9,
+  400 : #75b9e5,
+  500 : #5dade0,
+  600 : #55a6dc,
+  700 : #4b9cd8,
+  800 : #4193d3,
+  900 : #3083cb,
+  A100 : #ffffff,
+  A200 : #dceeff,
+  A400 : #a9d5ff,
+  A700 : #90c9ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+

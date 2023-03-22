@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="my-3 content-box row" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div class="chat">
+            <div *ngFor="let dt of data">
+                <div *ngIf="dt.name==='gpt'" class="response-gpt p-3 mb-3">
+                    <markdown [data]="dt.content" (load)="onLoad($event)" (error)="onError($event)">
+                    </markdown>
+                    <div class="time">{{ dt.time | date : 'medium'}}</div>
+                    <br>
+                </div>
+                <div *ngIf="dt.name==='user'" class="response-user p-3 mb-3">
+                    <div>{{ dt.content }}</div>
+                    <div class="time">{{ dt.time | date : 'medium'}}</div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row stick-bottom">
+        <div class="col-12">
+            <form [formGroup]="form">
+                <div class="input-field">
+                    <div class="email"><input type="email" placeholder="Ask something..." formControlName="question">
+                        <i class="fa fa-paper-plane" [ngClass]="sendBtn" (click)="sendQuesion()" *ngIf="form.valid"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

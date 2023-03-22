@@ -1,0 +1,13 @@
+<div class="container">
+  <p class="container-title mt-lg-5 mt-3">Here are the features<br>You can use.</p>
+  <div class="gradient-cards">
+    <div *ngFor="let widget of widgets; let i = index" (click)="onClick(widget)" class="card">
+      <div class="container-card bg-green-box">
+        <img src="{{ widget.image }}" class="img">
+        <p class="card-title">{{ widget.title }}</p>
+        <p class="card-description">{{ widget.desc }}</p>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

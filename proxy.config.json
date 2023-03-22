@@ -1,0 +1,7 @@
+{
+    "/guid-generator": {
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
