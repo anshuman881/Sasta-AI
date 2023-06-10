@@ -1,12 +1,13 @@
-<div class="container mt-3">
-  <div class="row mb-5 px-5 justify-content-center">
-    <div
-      *ngFor="let widget of widgets; let i = index"
-      (click)="onClick(widget)"
-      class="card-container cur_pointer col-lg-5 mb-4 card-content justify-content-center mx-lg-2"
-    >
-      <img src="{{ widget.image }}" class="card-content__img"/>
-      <p class="card-content__title">{{ widget.title }}</p>
+<div class="container">
+  <p class="container-title mt-lg-5 mt-3">Here are the features<br>You can use.</p>
+  <div class="gradient-cards">
+    <div *ngFor="let widget of widgets; let i = index" (click)="onClick(widget)" class="card">
+      <div class="container-card bg-green-box">
+        <img src="{{ widget.image }}" class="img">
+        <p class="card-title">{{ widget.title }}</p>
+        <p class="card-description">{{ widget.desc }}</p>
+      </div>
     </div>
   </div>
+  <app-footer></app-footer>
 </div>

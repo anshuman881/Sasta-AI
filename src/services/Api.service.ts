@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,16 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class Api {
 
-  headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    Authorization:
-      'Bearer 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',
-  });
+  public headers = new HttpHeaders({
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': 'cf2046b5cfmsh344c1a9f4d02205p1551f1jsn67f6d26d3999',
+    'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
+  })
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private handler: HttpBackend) {
+    this.http = new HttpClient(this.handler);
+  }
 
   chatGpt(question: any): Observable<any> {
-    let url: string = 'https://api.openai.com/v1/chat/completions';
+    let url: string = 'https://openai80.p.rapidapi.com/chat/completions';
     let data = {
       model: 'gpt-3.5-turbo',
       messages: [
@@ -33,12 +32,27 @@ export class Api {
   }
 
   dellEGeneration(desc: any, count: any, resolution: any): Observable<any> {
-    let url: string = 'https://api.openai.com/v1/images/generations';
+    console.log(desc, count, resolution);
+    let url: string = 'https://openai80.p.rapidapi.com/images/generations';
     let data = {
-      "n": count,
-      "prompt": desc,
-      "size": resolution
+      n: count,
+      prompt: desc,
+      size: resolution,
     };
     return this.http.post(url, data, { headers: this.headers });
   }
+
+  sendMail(email: any, feedback: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(
+      'https://formspree.io/f/xdovlgaz',
+      { name: email, message: feedback },
+      { headers: headers }
+    );
+  }
+
+  liveISSLocation(): Observable<any> {
+    return this.http.get('https://api.wheretheiss.at/v1/satellites/25544');
+  }
+
 }

@@ -1,61 +1,47 @@
-.response {
-  &-user {
-    max-width: 80%;
-    float: right;
-    border: 1px solid #eee;
-    font-size: 15px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #888888;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    background-color: white;
-  }
+@import "../../../styles.scss";
 
-  &-gpt {
-    max-width: 80%;
-    float: left;
-    font-size: 15px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #888888;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-    background-color: black;
-  }
-}
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   min-height:93vh;
+// }
 
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-.submit-icon{
-  margin-right: 20px;
-  margin-top: 13px;  
-}
-
-.submit-icon-content{
-  margin-right: 25px;
-  margin-top: 13px;
-  color: green;  
-}
-
-.res-image{
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 5px #888888;
-}
-
-.content {
-  flex: 1;
-}
-
-.container{
+.chat {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+}
+
+.stick-bottom {
+  position: sticky;
+}
+
+.count {
+  width: 100%;
+}
+
+.image-container{
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(white, 1);
+  backdrop-filter: blur(10px);
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.content-box {
+  animation: 1s ease-out 0s 1 slideInLeft;
 }

@@ -1,0 +1,22 @@
+<div class="continer">
+    <div class="row m-4 py-4">
+        <div class="col-4">
+            <form [formGroup]="cityForm" (keyup.enter)="findDistanceBetweenCity()">
+                <mat-form-field appearance="outline" class="count mat-form-field">
+                    <mat-select formControlName="city1">
+                        <mat-option *ngFor="let count of counts" [value]="count.value">
+                            {{count.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="count mat-form-field">
+                    <mat-select formControlName="city2">
+                        <mat-option *ngFor="let count of counts" [value]="count.value">
+                            {{count.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+              </form>
+        </div>
+    </div>
+</div>

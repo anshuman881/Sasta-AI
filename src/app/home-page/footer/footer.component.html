@@ -1,0 +1,40 @@
+<footer>
+  <div class="pt-3 pb-2">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
+        <div class="footer-widget">
+          <div class="footer-social-icon row justify-content-center d-flex">
+            <span>Follow me</span>
+            <a class="offset-1 col-3 bounce-icon" href="#"><img src="assets/img/linkedin.png" class="social-media"></a>
+            <a class="col-3 bounce-icon" href="#"><img src="assets/img/twitter.png" class="social-media"></a>
+            <a class="col-3 bounce-icon" href="#"><img src="assets/img/facebook.png" class="social-media"></a>
+          </div>
+          <!-- <div class="footer-widget mt-3 justify-content-center d-flex">
+            <a href="#"><img src="assets/img/email.png" class="social-media"></a>
+            <span style="color: white; font-size: 18px; margin-left: 20px;">sasta.ai@gmail.com</span>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-xl-8 col-lg-4 col-md-6">
+        <div class="footer-widget">
+          <div class="footer-widget-heading">
+            <h3 class="mb-3">Provide Feedback</h3>
+          </div>
+          <div class="subscribe-form">
+            <form [formGroup]="form" (keyup.enter)="sendMail()">
+              <div class="input-field">
+                <div class="email">
+                  <input type="email" placeholder="Email Id (optional)" formControlName="email"/>
+              </div>
+                <div class="email mt-2">
+                    <input type="text" placeholder="Feeback" formControlName="feedback"/>
+                    <img src="assets/img/sm.png" alt="" (click)="sendMail()" *ngIf="form.valid">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

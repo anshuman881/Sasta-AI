@@ -5,7 +5,6 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
   return (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
       try {
-        console.log(environment);
         await keycloak.init({
           config: {
             url: environment.keycloak.url,
@@ -43,4 +42,17 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
       }
     });
   };
+}
+
+export function logout(keycloak: KeycloakService): () => Promise<any> {
+  return (): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await keycloak.logout();
+        resolve(resolve);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
 }

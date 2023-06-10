@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   trigger,
@@ -12,42 +12,31 @@ import {
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
-  animations: [
-    trigger('openClose', [
-      state(
-        'open',
-        style({
-          height: '200px',
-          opacity: 1,
-          backgroundColor: 'yellow',
-        })
-      ),
-      state(
-        'closed',
-        style({
-          height: '100px',
-          opacity: 0.8,
-          backgroundColor: 'blue',
-        })
-      ),
-      transition('open => closed', [animate('1s')]),
-      transition('closed => open', [animate('0.5s')]),
-    ]),
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class HomePageComponent {
   public widgets: Array<any> = [
     {
-      title: 'Chat Gpt',
-      image: 'https://img.icons8.com/nolan/100/chatgpt.png',
-      path: 'chatGpt',
+      title: 'Chat.E1',
+      image: 'assets/img/ai2.png',
+      path: 'chatE1',
+      desc:'Chat.E1 is an artificial intelligence language model developed by Sasta.AI.It use chatGPT api.'
     },
     {
-      title: 'DALL·E 2',
+      title: 'Image.E1',
       image:
-        'https://img.freepik.com/free-vector/photo-concept-illustration_114360-161.jpg?w=740&t=st=1678610536~exp=1678611136~hmac=8564638b0a301b2ddb99d8f39f37319504cecb701fa58bcb7b90349855975796',
-      path: 'dellE',
+        'assets/img/artist.png',
+      path: 'imageE1',
+      desc:'Image.E1 is an AI system that can create realistic images and art from a description in natural language by using DELL-E2 api.'
     },
+    {
+      title: 'LatLongDistance.E1',
+      image:
+        'assets/img/globe.png',
+      path: 'latlongE1',
+      desc:'Find the Distance Between two city , city latitude & longniude & find distance between two cordinate.'
+    }
   ];
 
   constructor(private router: Router) {}
