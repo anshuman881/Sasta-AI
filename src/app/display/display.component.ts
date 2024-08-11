@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { Api } from 'src/services/Api.service';
-import { Data } from './data';
 
 @Component({
   selector: 'app-display',
