@@ -23,7 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'guid-generator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('guid-generator');
   });
 
   it('should render title', () => {

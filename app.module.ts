@@ -11,10 +11,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule} from '@angular/material/menu';
-import { PopupComponent } from './popup/popup.component';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { VoiceToTextComponent } from './content-page/voice-to-text/voice-to-text.component';
+import { PopupComponent } from 'src/app/popup/popup.component';
+import { ErrorPageComponent } from 'src/app/error-page/error-page.component';
+import { VoiceToTextComponent } from 'src/app/content-page/voice-to-text/voice-to-text.component';
 
 @NgModule({
   declarations: [

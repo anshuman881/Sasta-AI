@@ -5,22 +5,22 @@ import { KeycloakApi } from 'src/services/Keycloak.service';
 import { KeycloakService } from 'keycloak-angular';
 import { MatDialog } from '@angular/material/dialog';
 import { Api } from 'src/services/Api.service';
-import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+// import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('routeAnimation', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate("0s",keyframes([
-          style({ transform: 'translateX(0)'}),
-        ]))
-      ]),
-    ])
-  ]
+  // animations: [
+  //   trigger('routeAnimation', [
+  //     transition(':enter', [
+  //       style({ opacity: 0 }),
+  //       animate("0s",keyframes([
+  //         style({ transform: 'translateX(0)'}),
+  //       ]))
+  //     ]),
+  //   ])
+  // ]
 })
 export class AppComponent implements OnInit {
 
