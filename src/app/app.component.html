@@ -1,20 +1,20 @@
 <div class="toolbar fixed-top">
   <a [routerLink]="'/home'" class="px-lg-5 px-3">
-    <img src={{imageSrc}} alt="" style="height: 35px; width: 35px;" [ngClass]="spinclass">
+    <img src={{imageSrc}} alt="app_icon" style="height: 35px; width: 35px;" [ngClass]="spinclass">
     <span class="ai-name">{{appName}}</span>
   </a>
   <div class="spacer"></div>
   <div title="User Detail" *ngIf="userDetail">
-    <img src="assets/img/ha.png" alt="" [matMenuTriggerFor]="menu" class="main-menu">
+    <img src="assets/img/ha.png" alt="user_icon" [matMenuTriggerFor]="menu" class="main-menu">
   </div>
   <mat-menu #menu="matMenu" class="mt-3">
     <button mat-menu-item class="row d-flex" (click)="loadUserProfile()">
-      <div class="user-img"></div><img src="assets/img/alien.png" alt="" class="sub-menu">
+      <div class="user-img"></div><img src="assets/img/alien.png" alt="name_icon" class="sub-menu">
       <div class="user-id">{{userDetail?.firstName}}
         <div style="font-size: 12px;">{{userDetail?.email}}</div>
       </div>
     </button>
-    <button mat-menu-item (click)="logout()"><img src="assets/img/logout.png" alt=""
+    <button mat-menu-item (click)="logout()"><img src="assets/img/logout.png" alt="logout_icon"
         class="icon sub-menu">Logout</button>
   </mat-menu>
 </div>
