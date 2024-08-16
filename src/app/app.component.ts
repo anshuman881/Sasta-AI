@@ -103,48 +103,37 @@ export class AppComponent implements OnInit {
     let selector: string = this.userDetail.id;
     switch (selector.charAt(0)) {
       case '1':
-        this.shipName = 'Thrunzun';
-        this.planetName = 'TOI-700 e';
+        this.setShipAndPlanetName('Thrunzun','TOI-700 e');
         break;
       case '2':
-        this.shipName = 'Xukten';
-        this.planetName = 'Wolf 1069 b';
+        this.setShipAndPlanetName('Xukten','Wolf 1069 b');
         break;
       case '3':
-        this.shipName = 'Nokkun';
-        this.planetName = 'AF Leporis b';
+        this.setShipAndPlanetName('Nokkun','AF Leporis b');
         break;
       case '4':
-        this.shipName = 'Heimul';
-        this.planetName = 'L 363-38 b';
+        this.setShipAndPlanetName('Heimul','L 363-38 b');
         break;
       case '5':
-        this.shipName = 'Sceek’uks';
-        this.planetName = 'Kepler-1976 b';
+        this.setShipAndPlanetName('Sceek’uks','Kepler-1976 b');
         break;
       case '6':
-        this.shipName = 'Namno';
-        this.planetName = 'LTT 1445 A c';
+        this.setShipAndPlanetName('Namno','LTT 1445 A c');
         break;
       case '7':
-        this.shipName = 'Mozoih';
-        this.planetName = 'K2-381 c';
+        this.setShipAndPlanetName('Mozoih','K2-381 c');
         break;
       case '8':
-        this.shipName = 'Esai';
-        this.planetName = 'HIP 94235 b';
+        this.setShipAndPlanetName('Esai','HIP 94235 b');
         break;
       case '9':
-        this.shipName = 'Eviks';
-        this.planetName = 'Ross 508 b';
+        this.setShipAndPlanetName('Eviks','Ross 508 b');
         break;
       case 'o':
-        this.shipName = 'Shaahriex';
-        this.planetName = 'NGTS-20 b';
+        this.setShipAndPlanetName('Shaahriex','NGTS-20 b');
         break;
       default:
-        this.shipName = 'Garqoix';
-        this.planetName = 'CHXR 73 b';
+        this.setShipAndPlanetName('Garqoix','CHXR 73 b');
         break;
     }
 
@@ -155,6 +144,11 @@ export class AppComponent implements OnInit {
     this.dialog.open(this.loadProfile, {
       backdropClass: 'backdropBackground',
     })
+  }
+
+  setShipAndPlanetName(shipName:any,planetName:any){
+    this.shipName = shipName;
+    this.planetName = planetName;
   }
 
 }
