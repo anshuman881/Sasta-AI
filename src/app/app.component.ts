@@ -37,25 +37,20 @@ export class AppComponent implements OnInit {
   public userDetail: any;
   public imageSrc: any;
   public spinclass: any;
+  public shipName: string;
+  public cordinate: any;
+  public planetName: string;
 
   constructor(public title: Title, private router: Router, private keycloakApi: KeycloakApi, private keycloak: KeycloakService, private dialog: MatDialog, private api: Api) {
     this.router.events.subscribe((val) => {
       if (title.getTitle().includes('Home')) {
-        this.appName = 'SASTA.AI';
-        this.imageSrc = 'assets/img/ai3.png';
-        this.spinclass = 'spin';
+        this.setAppNameAndImg('SASTA.AI','assets/img/ai3.png','spin');
       } else if (title.getTitle().includes('Chat')) {
-        this.appName = 'Chat.E1';
-        this.imageSrc = 'assets/img/ai2.png';
-        this.spinclass = '';
+        this.setAppNameAndImg('Chat.E1','assets/img/ai2.png','');
       } else if (title.getTitle().includes('Image')){
-        this.appName = 'Image.E1';
-        this.imageSrc = 'assets/img/artist.png';
-        this.spinclass = '';
+        this.setAppNameAndImg('Image.E1','assets/img/artist.png','');
       } else {
-        this.appName = 'LatLong.E1';
-        this.imageSrc = 'assets/img/globe.png';
-        this.spinclass = 'spin';
+        this.setAppNameAndImg('LatLong.E1','assets/img/globe.png','spin');
       }
       this.hideContentPageWise();
     });
@@ -67,37 +62,34 @@ export class AppComponent implements OnInit {
     })
   }
 
+  setAppNameAndImg(appName: any, imageSrc: any, spinclass: any) {
+    this.appName = appName;
+    this.imageSrc = imageSrc;
+    this.spinclass = spinclass;
+  }
+
   hideContentPageWise() {
     if (this.appName == 'SASTA.AI') {
-      this.home = true;
-      this.chatE1 = false;
-      this.imageE1 = false;
-      this.latlongE1 = false;
+      this.setTrueFalseAsPerPage(true,false,false,false);
     } else if (this.appName == 'Chat.E1') {
-      this.home = false;
-      this.chatE1 = true;
-      this.imageE1 = false;
-      this.latlongE1 = false;
+      this.setTrueFalseAsPerPage(false,true,false,false);
     } else if((this.appName == 'Image.E1')){
-      this.home = false;
-      this.chatE1 = false;
-      this.imageE1 = true;
-      this.latlongE1 = false;
+      this.setTrueFalseAsPerPage(false,false,true,false);
     } else {
-      this.home = false;
-      this.chatE1 = false;
-      this.imageE1 = false;
-      this.latlongE1 = true;
+      this.setTrueFalseAsPerPage(false,false,false,true);
     }
+  }
+
+  setTrueFalseAsPerPage(home: any, chatE1: any, imageE1: any, latlongE1: any) {
+    this.home = home;
+    this.chatE1 = chatE1;
+    this.imageE1 = imageE1;
+    this.latlongE1 = latlongE1;
   }
 
   logout() {
     this.keycloak.logout();
   }
-
-  public shipName: string;
-  public cordinate: any;
-  public planetName: string;
 
   loadUserProfile() {
     let selector: string = this.userDetail.id;
