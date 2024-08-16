@@ -21,14 +21,14 @@ export class HomePageComponent {
       title: 'Chat.E1',
       image: 'assets/img/ai2.png',
       path: 'chatE1',
-      desc:'Chat.E1 is an artificial intelligence language model developed by Sasta.AI.It use chatGPT api.'
+      desc:'Chat.E1 is an artificial intelligence language model developed by using chatGPT API. You can ask any thing & in any language.'
     },
     {
       title: 'Image.E1',
       image:
         'assets/img/artist.png',
       path: 'imageE1',
-      desc:'Image.E1 is an AI system that can create realistic images and art from a description in natural language by using DELL-E2 api.'
+      desc:'Image.E1 is an AI system that can create images and art from a description in natural language by using DELL-E2 API.'
     },
     {
       title: 'LatLongDistance.E1',
