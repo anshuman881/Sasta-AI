@@ -29,13 +29,6 @@ export class HomePageComponent {
         'assets/img/artist.png',
       path: 'imageE1',
       desc:'Image.E1 is an AI system that can create images and art from a description in natural language by using DELL-E2 API.'
-    },
-    {
-      title: 'LatLongDistance.E1',
-      image:
-        'assets/img/globe.png',
-      path: 'latlongE1',
-      desc:'Find the Distance Between two city , city latitude & longniude & find distance between two cordinate.'
     }
   ];
 
