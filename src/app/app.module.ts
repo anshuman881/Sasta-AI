@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-import { initializer } from 'src/util/app-init';
-import { APP_INITIALIZER } from '@angular/core';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -30,14 +27,8 @@ import { VoiceToTextComponent } from './content-page/voice-to-text/voice-to-text
         BrowserAnimationsModule,
         AppRoutingModule,
         MatIconModule,
-        FormsModule,
-        KeycloakAngularModule], providers: [
-        // KeycloakService,{
-        //   provide:APP_INITIALIZER,
-        //   useFactory:initializer,
-        //   multi:true,
-        //   deps:[KeycloakService]
-        // },
+        FormsModule], 
+        providers: [
         { provide: MAT_DIALOG_DATA, useValue: {} },
         { provide: MatDialogRef, useValue: {} },
         provideHttpClient(withInterceptorsFromDi())

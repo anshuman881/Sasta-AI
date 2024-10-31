@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { ClipboardButtonComponent, ClipboardOptions, MarkdownModule } from 'ngx-markdown';
+import { CLIPBOARD_OPTIONS, ClipboardButtonComponent, MarkdownModule } from 'ngx-markdown';
 import { DellEComponent } from './dell-e.component';
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
         ReactiveFormsModule,
         MarkdownModule.forRoot({
             clipboardOptions: {
-                provide: ClipboardOptions,
+                provide: CLIPBOARD_OPTIONS,
                 useValue: {
                     buttonComponent: ClipboardButtonComponent,
                 },

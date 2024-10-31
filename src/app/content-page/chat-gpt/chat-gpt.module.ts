@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChatGptComponent } from './chat-gpt.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ClipboardButtonComponent, ClipboardOptions, MarkdownModule } from 'ngx-markdown';
+import { CLIPBOARD_OPTIONS, ClipboardButtonComponent, MarkdownModule } from 'ngx-markdown';
 
 const routes: Routes = [
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
         ReactiveFormsModule,
         MarkdownModule.forRoot({
             clipboardOptions: {
-                provide: ClipboardOptions,
+                provide: CLIPBOARD_OPTIONS,
                 useValue: {
                     buttonComponent: ClipboardButtonComponent,
                 },

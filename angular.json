@@ -72,14 +72,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MyGarage:build"
+            "buildTarget": "MyGarage:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "guid-generator:build:production"
+              "buildTarget": "guid-generator:build:production"
             },
             "development": {
-              "browserTarget": "guid-generator:build:development"
+              "buildTarget": "guid-generator:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "guid-generator:build"
+            "buildTarget": "guid-generator:build"
           }
         },
         "test": {

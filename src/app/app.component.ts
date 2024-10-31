@@ -2,7 +2,6 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { KeycloakApi } from 'src/services/Keycloak.service';
-import { KeycloakService } from 'keycloak-angular';
 import { MatDialog } from '@angular/material/dialog';
 import { Api } from 'src/services/Api.service';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
@@ -41,7 +40,7 @@ export class AppComponent implements OnInit {
   public cordinate: any;
   public planetName: string;
 
-  constructor(public title: Title, private router: Router, private keycloakApi: KeycloakApi, private keycloak: KeycloakService, private dialog: MatDialog, private api: Api) {
+  constructor(public title: Title, private router: Router, private keycloakApi: KeycloakApi, private dialog: MatDialog, private api: Api) {
     this.router.events.subscribe((val) => {
       if (title.getTitle().includes('Home')) {
         this.setAppNameAndImg('SASTA.AI','assets/img/ai3.png','spin');
@@ -88,7 +87,7 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.keycloak.logout();
+    //this.keycloak.logout();
   }
 
   loadUserProfile() {
