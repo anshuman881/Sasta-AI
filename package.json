@@ -30,7 +30,7 @@
     "chatgpt": "^5.0.9",
     "express": "^4.21.1",
     "ngx-markdown": "^18.1.0",
-    "request": "^2.79.0",
+    "request": "^2.88.2",
     "rxjs": "~7.8.0",
     "save": "^2.9.0",
     "tslib": "^2.3.0",
