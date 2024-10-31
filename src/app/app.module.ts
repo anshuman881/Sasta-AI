@@ -3,10 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-import { initializer } from 'src/util/app-init';
-import { APP_INITIALIZER } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -16,36 +13,24 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { VoiceToTextComponent } from './content-page/voice-to-text/voice-to-text.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    PopupComponent,
-    ErrorPageComponent,
-    VoiceToTextComponent
-  ],
-  imports: [
-    BrowserModule,
-    MatCardModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    MatMenuModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatIconModule,
-    FormsModule,
-    KeycloakAngularModule,
-    HttpClientModule,
-  ],
-  providers: [
-    // KeycloakService,{
-    //   provide:APP_INITIALIZER,
-    //   useFactory:initializer,
-    //   multi:true,
-    //   deps:[KeycloakService]
-    // },
-    { provide: MAT_DIALOG_DATA, useValue: {} },
-    { provide: MatDialogRef, useValue: {} }
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        PopupComponent,
+        ErrorPageComponent,
+        VoiceToTextComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        MatCardModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatIconModule,
+        FormsModule], 
+        providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }

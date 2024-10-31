@@ -33,7 +33,7 @@
                 <img src="assets/img/alien.png" class="rounded-circle img-fluid" style="width: 100px;" />
               </div>
               <h4 class="mb-2">{{userDetail?.firstName}} {{userDetail?.lastName}}</h4>
-              <p class="mb-4"><span class="mx-2">alien@{{userDetail?.id | slice:2:6}}</span><span
+              <p class="mb-4"><span class="mx-2">alien{{userDetail?.id | slice:2:6}}</span><span
                   class="mx-2">|</span><a>{{userDetail?.email}}</a></p>
               <div class="d-flex justify-content-between text-center mt-5 mb-2">
                 <div title="Plant Name">

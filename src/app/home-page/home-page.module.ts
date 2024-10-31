@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page.component';
@@ -13,15 +13,9 @@ const routes: Routes = [
   },
 ]
 
-@NgModule({
-  declarations: [HomePageComponent ,FooterComponent],
-  imports: [
-    CommonModule,
-    CommonModule,
-    RouterModule.forChild(routes),
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ]
-})
+@NgModule({ declarations: [HomePageComponent, FooterComponent], imports: [CommonModule,
+        CommonModule,
+        RouterModule.forChild(routes),
+        FormsModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class HomePageModule { }
