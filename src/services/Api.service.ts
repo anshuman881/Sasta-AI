@@ -9,7 +9,7 @@ export class Api {
 
   public headers = new HttpHeaders({
     'content-type': 'application/json',
-    'X-RapidAPI-Key': 'cf2046b5cfmsh344c1a9f4d02205p1551f1jsn67f6d26d3999',
+    'X-RapidAPI-Key': '',
     'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
   })
 
