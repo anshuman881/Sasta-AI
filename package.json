@@ -28,7 +28,7 @@
     "@capacitor/core": "^4.7.0",
     "@dqbd/tiktoken": "^0.4.0",
     "chatgpt": "^5.0.9",
-    "express": "^4.18.2",
+    "express": "^4.21.1",
     "ngx-markdown": "^18.1.0",
     "request": "^2.79.0",
     "rxjs": "~7.8.0",
