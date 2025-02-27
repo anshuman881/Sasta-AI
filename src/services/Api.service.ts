@@ -7,28 +7,24 @@ import { Observable } from 'rxjs';
 })
 export class Api {
 
-  public headers = new HttpHeaders({
-    'content-type': 'application/json',
-    'X-RapidAPI-Key': '',
-    'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
-  })
+  headers = { "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmQzOGM2OTQtMTg1NC00NTkyLTg4NmEtY2I2N2RkODg2NTQ3IiwidHlwZSI6ImFwaV90b2tlbiJ9.7pRTj0qpWm-rcF3m1H6seYm8ZxDf-3B_73m7IH12s08" }
 
   constructor(private http: HttpClient, private handler: HttpBackend) {
     this.http = new HttpClient(this.handler);
   }
 
-  chatGpt(question: any): Observable<any> {
-    let url: string = 'https://openai80.p.rapidapi.com/chat/completions';
-    let data = {
-      model: 'gpt-3.5-turbo',
-      messages: [
-        {
-          role: 'user',
-          content: question,
-        },
-      ],
-    };
-    return this.http.post(url, data, { headers: this.headers });
+  async chatGpt(question: any): Promise<Observable<any>> {
+    const res = await this.nestedCall(question).toPromise();
+    let getUrl: string = 'https://api.edenai.run/v2/workflow/df6d372d-f810-4f2f-9524-119cad7d7010/execution/';
+    getUrl = getUrl + res.id;
+    console.log(getUrl);
+    return this.http.get(getUrl, { headers: this.headers });
+  }
+
+  nestedCall(question: any): Observable<any> {
+    let postUrl: string = 'https://api.edenai.run/v2/workflow/df6d372d-f810-4f2f-9524-119cad7d7010/execution/';
+    let payload = { "text": question }
+    return this.http.post(postUrl, payload, { headers: this.headers });
   }
 
   dellEGeneration(desc: any, count: any, resolution: any): Observable<any> {

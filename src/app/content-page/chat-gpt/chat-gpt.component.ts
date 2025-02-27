@@ -68,7 +68,7 @@ export class ChatGptComponent implements OnInit, AfterViewInit {
     this.localStorageService(user);
     this.api
       .chatGpt(this.form.get('question')?.value)
-      .pipe(
+      .catch(
         catchError((error: HttpErrorResponse) => {
           this.loading = false;
           let dialogRef = this.dialog.open(ErrorPageComponent, {
@@ -79,18 +79,18 @@ export class ChatGptComponent implements OnInit, AfterViewInit {
           });
           return EMPTY;
         })
-      ).subscribe((res) => {
+      ).then((res) => {
         if (res) {
           this.loading = false;
           this.form.reset();
-          const detail = res.choices[0];
-          this.answer = detail.message.content;
-          const gpt = {
-            time: new Date().getTime(),
-            name: 'gpt',
-            content: this.answer,
-          };
-          this.localStorageService(gpt);
+          res.subscribe((r)=>{
+            const gpt = {
+              time: new Date().getTime(),
+              name: 'gpt',
+              content: r.content.results.text__chat.results[0].message[1].message,
+            };
+            this.localStorageService(gpt);            
+          })
         }
       });
   }

@@ -56,9 +56,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.keycloakApi.getUserDetail().subscribe((res) => {
-      this.userDetail = res;
-    })
   }
 
   setAppNameAndImg(appName: any, imageSrc: any, spinclass: any) {
